@@ -1,6 +1,6 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 
-const Navbar = (): ReactElement => {
+const Navbar = ({ searchText, handleSearch }) => {
     return (
         <div className="bg-blue-600 flex w-screen justify-between items-center h-16 px-2 py-1">
             <h1 className='text-2xl font-semibold text-white'>My Librarian</h1>
@@ -13,6 +13,10 @@ const Navbar = (): ReactElement => {
                         id="search"
                         type="text" placeholder="search by title or author"
                         className="h-[30px] rounded-md p-2 "
+                        onChange={(event) => {
+                            handleSearch(event.target.value)
+                            console.log("Event!!!")
+                        }}
                     />
                 </div>
             </div>
