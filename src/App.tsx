@@ -1,33 +1,150 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { ReactElement, useState } from 'react'
 import './App.css'
+import Navbar from './components/Navbar'
+import Book from './components/Book'
 
-function App() {
-  const [count, setCount] = useState(0)
+function App(): ReactElement {
+  [
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "releaseDate": "1925-04-10",
+      "imageLink": "https://images-na.ssl-images-amazon.com/images/I/81s1Zu4%2BQHL.jpg"
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "releaseDate": "1949-06-08",
+      "imageLink": "https://images-na.ssl-images-amazon.com/images/I/71t%2Bh3%2B6Z0L.jpg"
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "releaseDate": "1960-07-11",
+      "imageLink": "https://images-na.ssl-images-amazon.com/images/I/71dQjDJhJgL.jpg"
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "releaseDate": "1813-01-28",
+      "imageLink": "https://images-na.ssl-images-amazon.com/images/I/81G%2BdYqkz1L.jpg"
+    },
+    {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "releaseDate": "1951-07-16",
+      "imageLink": "https://images-na.ssl-images-amazon.com/images/I/71I6xvP28jL.jpg"
+    },
+    {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "releaseDate": "1937-09-21",
+      "imageLink": "https://images-na.ssl-images-amazon.com/images/I/81sK3gCp3gL.jpg"
+    },
+    {
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "releaseDate": "1954-07-29",
+      "imageLink": "https://images-na.ssl-images-amazon.com/images/I/51xzjxu9uXL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+      "title": "The Hunger Games",
+      "author": "Suzanne Collins",
+      "releaseDate": "2008-09-14",
+      "imageLink": "https://images-na.ssl-images-amazon.com/images/I/71z%2BjFwX%2BTL.jpg"
+    },
+    {
+      "title": "Harry Potter and the Philosopher's Stone",
+      "author": "J.K. Rowling",
+      "releaseDate": "1997-06-26",
+      "imageLink": "https://images-na.ssl-images-amazon.com/images/I/81YOuOGFCJL.jpg"
+    },
+    {
+      "title": "The Da Vinci Code",
+      "author": "Dan Brown",
+      "releaseDate": "2003-03-18",
+      "imageLink": "https://images-na.ssl-images-amazon.com/images/I/51v7c4VbJ9L._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"
+    }
+  ]
 
+
+  const books = [
+    {
+      title: "The Great Gatsby",
+      author: "F. Scott Fitzgerald",
+      releaseDate: "1925-04-10",
+      imageLink: "https://images-na.ssl-images-amazon.com/images/I/81s1Zu4%2BQHL.jpg"
+    },
+    {
+      title: "1984",
+      author: "George Orwell",
+      releaseDate: "1949-06-08",
+      imageLink: "https://images-na.ssl-images-amazon.com/images/I/71t%2Bh3%2B6Z0L.jpg"
+    },
+    {
+      title: "To Kill a Mockingbird",
+      author: "Harper Lee",
+      releaseDate: "1960-07-11",
+      imageLink: "https://images-na.ssl-images-amazon.com/images/I/71dQjDJhJgL.jpg"
+    },
+    {
+      title: "Pride and Prejudice",
+      author: "Jane Austen",
+      releaseDate: "1813-01-28",
+      imageLink: "https://images-na.ssl-images-amazon.com/images/I/81G%2BdYqkz1L.jpg"
+    },
+    {
+      title: "The Catcher in the Rye",
+      author: "J.D. Salinger",
+      releaseDate: "1951-07-16",
+      imageLink: "https://images-na.ssl-images-amazon.com/images/I/71I6xvP28jL.jpg"
+    },
+    {
+      title: "The Hobbit",
+      author: "J.R.R. Tolkien",
+      releaseDate: "1937-09-21",
+      imageLink: "https://images-na.ssl-images-amazon.com/images/I/81sK3gCp3gL.jpg"
+    },
+    {
+      title: "The Lord of the Rings",
+      author: "J.R.R. Tolkien",
+      releaseDate: "1954-07-29",
+      imageLink: "https://images-na.ssl-images-amazon.com/images/I/51xzjxu9uXL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+      title: "The Hunger Games",
+      author: "Suzanne Collins",
+      releaseDate: "2008-09-14",
+      imageLink: "https://images-na.ssl-images-amazon.com/images/I/71z%2BjFwX%2BTL.jpg"
+    },
+    {
+      title: "Harry Potter and the Philosopher's Stone",
+      author: "J.K. Rowling",
+      releaseDate: "1997-06-26",
+      imageLink: "https://images-na.ssl-images-amazon.com/images/I/81YOuOGFCJL.jpg"
+    },
+    {
+      title: "The Da Vinci Code",
+      author: "Dan Brown",
+      releaseDate: "2003-03-18",
+      imageLink: "https://images-na.ssl-images-amazon.com/images/I/51v7c4VbJ9L._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"
+    }
+  ];
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Navbar />
+      <div className="shelve p-3 md:p-16">
+        <h2 className="text-xl font-semibold">All Books</h2>
+        <hr />
+        <hr />
+        <hr />
+        <div className='mt-3 flex flex-col gap-3'>
+          <Book />
+          <Book />
+          <Book />
+          <Book />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
