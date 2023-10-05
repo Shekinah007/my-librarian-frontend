@@ -1,8 +1,19 @@
 import React, { ReactElement } from 'react'
 
-const Book = (): ReactElement => {
+// type BookInfo = {
+//     bookDetails: 
+// }
+// const Book: React.FunctionComponent<BookInfo> = ({ bookDetails }: any):  => {
+
+
+const Book = ({ bookDetails }: any) => {
     return (
-        <div>Book</div>
+        <div className="book">
+            <h3 className="font-semibold text-xl">{bookDetails.title}</h3>
+            <p>{bookDetails.author}</p>
+            <p className="text-gray-500 font-bold text-sm">{bookDetails.releaseDate}</p>
+            <hr />
+        </div>
     )
 }
 

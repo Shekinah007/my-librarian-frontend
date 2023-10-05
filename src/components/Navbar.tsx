@@ -1,8 +1,8 @@
-import { ReactElement } from 'react'
+import { } from 'react'
 
 const Navbar = ({ searchText, handleSearch }) => {
     return (
-        <div className="bg-blue-600 flex w-screen justify-between items-center h-16 px-2 py-1">
+        <div className="bg-blue-600 flex w-screen justify-between items-center h-16 px-2 py-1 fixed">
             <h1 className='text-2xl font-semibold text-white'>My Librarian</h1>
             <div className="flex gap-3">
                 {/* <button>List All Books</button> */}
