@@ -13,7 +13,8 @@ function App(): ReactElement {
 
 
   useEffect(() => {
-    fetch("http://localhost:3000/library/book/")
+    // fetch("http://localhost:3000/library/book/")
+    fetch("https://mylibrarian.zeabur.app/library/book/")
       .then(res => {
         if (res.ok) {
           console.log("Got the books. OKAY!")
@@ -40,7 +41,8 @@ function App(): ReactElement {
   // }, [searchText])
 
   useEffect(() => {
-    fetch("http://localhost:3000/library/book/findBook", {
+    // fetch("http://localhost:3000/library/book/findBook", {
+    fetch("https://mylibrarian.zeabur.app/library/findBook", {
       method: "POST",
       body: JSON.stringify({ searchText: searchText }),
       headers: { 'Content-Type': 'application/json' }

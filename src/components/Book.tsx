@@ -20,7 +20,8 @@ const Book = ({ bookDetails }: any) => {
             <button className="bg-red-400 rounded-md p-1 text-white
              hover:bg-red-500 active:bg-red-600"
                 onClick={() => {
-                    fetch(`http://localhost:3000/library/book/deleteBook/${bookDetails._id}`,
+                    // fetch(`http://localhost:3000/library/book/deleteBook/${bookDetails._id}`,
+                    fetch(`https://mylibrarian.zeabur.app/library/book/deleteBook/${bookDetails._id}`,
                         {
                             method: "DELETE",
                         }

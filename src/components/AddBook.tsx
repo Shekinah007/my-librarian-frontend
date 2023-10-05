@@ -12,7 +12,8 @@ const AddBook = ({ openAddFormBtn, handleAddForm }: any) => {
     const handleSubmit = async (e: any) => {
         e.preventDefault()
 
-        fetch("http://localhost:3000/library/book/addBook", {
+        // fetch("http://localhost:3000/library/book/addBook", {
+        fetch("https://mylibrarian.zeabur.app/library/bookaddBook", {
             method: "POST",
             body: JSON.stringify({
                 title: title,
