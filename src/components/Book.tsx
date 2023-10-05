@@ -1,4 +1,3 @@
-import React, { ReactElement, useEffect, useState } from 'react'
 
 // type BookInfo = {
 //     bookDetails: 
@@ -6,9 +5,8 @@ import React, { ReactElement, useEffect, useState } from 'react'
 // const Book: React.FunctionComponent<BookInfo> = ({ bookDetails }: any):  => {
 
 
-const Book = ({ bookDetails, refreshList, bookList }: any) => {
+const Book = ({ bookDetails }: any) => {
 
-    const [refresh, setRefresh] = useState("Hello")
 
 
     return (
@@ -33,7 +31,6 @@ const Book = ({ bookDetails, refreshList, bookList }: any) => {
                                 fetch("http://localhost:3000/library/book/")
                                     .then(res => res.json())
                                     .then(data => {
-                                        setRefresh("NOW REFRESH")
                                         console.log(data)
                                     })
                             }
@@ -46,7 +43,6 @@ const Book = ({ bookDetails, refreshList, bookList }: any) => {
             >
                 Delete
             </button>
-            <p>{refresh}</p>
         </div >
     )
 }

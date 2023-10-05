@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddBook = ({ openAddFormBtn, handleAddForm }) => {
+const AddBook = ({ openAddFormBtn, handleAddForm }: any) => {
 
 
     const [title, setTitle] = useState("")
