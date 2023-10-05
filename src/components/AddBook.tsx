@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddBook = () => {
+const AddBook = ({ openAddFormBtn, handleAddForm }) => {
 
 
     const [title, setTitle] = useState("")
@@ -37,7 +37,7 @@ const AddBook = () => {
     }
 
     return (
-        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-400 text-white rounded-md p-5">
+        <div className={`fixed top-1/2 left-1/2 duration-300 ${!openAddFormBtn && "top-[1500px]"} transform -translate-x-1/2 -translate-y-1/2 bg-blue-400 text-white rounded-md p-5`}>
             <form
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-4 items-center justify-center">
@@ -69,7 +69,10 @@ const AddBook = () => {
                         onChange={(e) => { setImageLink(e.target.value) }}
                     />
                 </div>
-                <button className="rounded-md p-2 bg-black">Add</button>
+                <div className="flex gap-3">
+                    <button className="rounded-md p-2 bg-green-500 w-[70px]" type="submit" >Add</button>
+                    <button className="rounded-md p-2 bg-red-500 w-[70px]" type="button" onClick={() => { handleAddForm(false) }}>Cancel</button>
+                </div>
             </form>
         </div>
     )
