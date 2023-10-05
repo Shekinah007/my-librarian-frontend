@@ -25,15 +25,14 @@ const AddBook = ({ openAddFormBtn, handleAddForm }) => {
             .then(res => {
                 console.log(res)
                 if (res.ok) {
-                    console.log("Success")
+                    // console.log("Success")
                     alert("Book added successfully")
                     return res.json()
                 } else {
                     alert("An error has occurred. Check console for details.")
-                    console.log(res)
+                    // console.log(res)
                 }
             })
-
     }
 
     return (

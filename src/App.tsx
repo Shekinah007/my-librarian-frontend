@@ -14,9 +14,18 @@ function App(): ReactElement {
 
   useEffect(() => {
     fetch("http://localhost:3000/library/book/")
-      .then(res => res.json())
+      .then(res => {
+        if (res.ok) {
+          console.log("Got the books. OKAY!")
+          return res.json()
+        } else {
+          alert("Failed to get books")
+          console.log(res)
+          return []
+        }
+      })
       .then(data => {
-        console.log(data)
+        console.log("Get Books Not Successfull")
         setBookList(data)
       })
   }, []);
@@ -35,36 +44,45 @@ function App(): ReactElement {
       method: "POST",
       body: JSON.stringify({ searchText: searchText }),
       headers: { 'Content-Type': 'application/json' }
-    }).then(res => res.json())
+    }).then(res => {
+      if (res.ok) {
+        return res.json()
+      } else {
+        setBookList([])
+        return []
+      }
+    })
       .then(data => {
-        console.log(data)
         setBookList(data)
       })
   }, [searchText]);
 
+
   return (
-    <>
+    <div className="">
       <Navbar searchText={searchText} handleSearch={setSearchText} />
       <div className="shelve py-3 pt-20 flex flex-col justify-center items-center">
         <h2 className="text-xl font-semibold">All Books</h2>
         <hr className='w-full' />
         <hr />
         <hr />
-        <div className='mt-3 flex flex-col gap-3 w-screen'>
-          {bookList ? bookList.map(book => <Book bookDetails={book} key={book._id} />) : ""}
+        <div className='mt-3 flex flex-col justify-center md:items-center gap-3 w-screen'>
+          {bookList.length == 0 ? "Not Present" : "Present"}
+          {bookList.length == 0 ? "" : bookList.map(book => <Book bookDetails={book} key={book._id} />)}
+
         </div>
         <button className="fixed bottom-10 right-10
          bg-blue-500 text-white hover:bg-black p-2 rounded-md"
           onClick={() => {
             setAddButton(prevState => !prevState)
-            console.log(addButton)
+            // console.log(addButton)
           }}
         >
           Add Book
         </button>
       </div>
       <AddBook openAddFormBtn={addButton} handleAddForm={setAddButton} />
-    </>
+    </div>
   )
 }
 
