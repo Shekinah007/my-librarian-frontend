@@ -5,7 +5,7 @@ const Deleted = ({ deleteModal, handleDeleteModal }: any) => {
         <div>
             <div className={`
             h-screen w-screen bg-black opacity-30 duration-300 fixed top-0 scale-100
-            ${!deleteModal && '-scale-0 bg-red-500 opacity'}`
+            ${!deleteModal && '-scale-0 opacity-0'}`
             }></div>
             <div className={`
         rounded-lg h-[180px] w-[250px] bg-red-200 flex flex-col 
