@@ -47,7 +47,7 @@ const AddBook = ({ openAddFormBtn, handleAddForm, handleBookList }: any) => {
     }
 
     return (
-        <div className={`fixed top-1/2 left-1/2 duration-300 ${!openAddFormBtn && "top-[1500px]"} transform -translate-x-1/2 -translate-y-1/2 bg-blue-400 text-white rounded-md p-5`}>
+        <div className={`fixed top-1/2 left-1/2 duration-700 ${!openAddFormBtn && "top-[1500px]"} transform -translate-x-1/2 -translate-y-1/2 bg-blue-400 text-white rounded-md p-5`}>
             <form
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-4 items-center justify-center">

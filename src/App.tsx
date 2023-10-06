@@ -3,12 +3,15 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Book from './components/Book'
 import AddBook from './components/AddBook'
+import Deleted from './components/Deleted'
 
 function App(): ReactElement {
 
   const [searchText, setSearchText] = useState<String>("")
   const [bookList, setBookList] = useState([])
   const [addButton, setAddButton] = useState<Boolean>(false)
+  const [deleteModal, setDeleteModal] = useState(true)
+
 
 
 
@@ -70,7 +73,7 @@ function App(): ReactElement {
         <hr />
         <div className='mt-3 flex flex-col justify-center md:items-center gap-3 w-screen'>
           {/* {bookList.length == 0 ? "Not Present" : "Present"} */}
-          {bookList.length == 0 ? "" : bookList.map(book => <Book bookDetails={book} key={Math.random() * 10} bookList={bookList} hanldeBookList={setBookList} />)}
+          {bookList.length == 0 ? "" : bookList.map(book => <Book bookDetails={book} key={Math.random() * 10} openDeleteModal={setDeleteModal} bookList={bookList} hanldeBookList={setBookList} />)}
 
         </div>
         <button className="fixed bottom-10 right-10
@@ -84,6 +87,7 @@ function App(): ReactElement {
         </button>
       </div>
       <AddBook openAddFormBtn={addButton} handleAddForm={setAddButton} handleBookList={setBookList} />
+      <Deleted deleteModal={deleteModal} handleDeleteModal={setDeleteModal} />
     </div>
   )
 }

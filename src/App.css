@@ -1,0 +1,20 @@
+.delete-modal-animation {
+    animation: delete-modal-animation;
+    animation-duration: 0.5s;
+}
+
+@keyframes delete-animation {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(0)
+    }
+
+}

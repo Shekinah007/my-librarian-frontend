@@ -5,7 +5,7 @@
 // const Book: React.FunctionComponent<BookInfo> = ({ bookDetails }: any):  => {
 
 
-const Book = ({ bookDetails, hanldeBookList }: any) => {
+const Book = ({ bookDetails, hanldeBookList, openDeleteModal }: any) => {
 
 
 
@@ -29,7 +29,8 @@ const Book = ({ bookDetails, hanldeBookList }: any) => {
                         .then(res => {
                             if (res.ok) {
                                 console.log("Delete Successful")
-                                alert("Delete Successful")
+                                // alert("Delete Successful")
+                                openDeleteModal(true)
                                 // fetch("http://localhost:3000/library/book/")
                                 fetch("https://mylibrarian.zeabur.app/library/book/")
                                     .then(res => res.json())
