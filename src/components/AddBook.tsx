@@ -36,8 +36,7 @@ const AddBook = ({ openAddFormBtn, handleAddForm, handleBookList }: any) => {
                         .then(data => {
                             handleBookList(data)
                             handleAddForm(false)
-                            alert("Book added successfully")
-
+                            // alert("Book added successfully")
                         })
                     return res.json()
                 } else {
