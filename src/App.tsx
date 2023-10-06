@@ -65,6 +65,10 @@ function App(): ReactElement {
 
   return (
     <div className="">
+      <div className={`
+            h-screen w-screen bg-black opacity-30 duration-300 fixed top-0 scale-100
+            ${!deleteModal && '-scale-0 opacity-0'}`
+      }></div>
       <Navbar searchText={searchText} handleSearch={setSearchText} />
       <div className="shelve py-3 pt-20 flex flex-col justify-center items-center">
         <h2 className="text-lg font-semibold">All Books</h2>
