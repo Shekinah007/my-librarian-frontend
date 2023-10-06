@@ -3,10 +3,10 @@ const Deleted = ({ deleteModal, handleDeleteModal }: any) => {
 
     return (
         <div>
-            <div className={`
+            {/* <div className={`
             h-screen w-screen bg-black opacity-30 duration-300 fixed top-0 scale-100
             ${!deleteModal && '-scale-0 opacity-0'}`
-            }></div>
+            }></div> */}
             <div className={`
         rounded-lg h-[180px] w-[250px] bg-red-200 flex flex-col 
         items-center justify-center gap-6 duration-300 fixed top-1/2 
