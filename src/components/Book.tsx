@@ -5,7 +5,7 @@
 // const Book: React.FunctionComponent<BookInfo> = ({ bookDetails }: any):  => {
 
 
-const Book = ({ bookDetails }: any) => {
+const Book = ({ bookDetails, bookList, hanldeBookList }: any) => {
 
 
 
@@ -34,6 +34,7 @@ const Book = ({ bookDetails }: any) => {
                                     .then(res => res.json())
                                     .then(data => {
                                         console.log(data)
+                                        hanldeBookList(data)
                                     })
                             }
                             else {
