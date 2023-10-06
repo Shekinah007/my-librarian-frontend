@@ -1,4 +1,3 @@
-import { useState } from "react"
 
 const Deleted = ({ deleteModal, handleDeleteModal }: any) => {
 
@@ -17,7 +16,7 @@ const Deleted = ({ deleteModal, handleDeleteModal }: any) => {
                 <p className="text-lg font-semibold">Deleted Successfully</p>
                 <button
                     className="bg-blue-500 text-white p-2 px-6 rounded-lg"
-                    onClick={() => handleDeleteModal((prev: any) => false)}
+                    onClick={() => handleDeleteModal(() => false)}
                 >
                     OK
                 </button>
