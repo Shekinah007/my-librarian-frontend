@@ -71,7 +71,7 @@ function App(): ReactElement {
       }></div> */}
       <Navbar searchText={searchText} handleSearch={setSearchText} />
       <div className="shelve py-3 pt-12 flex flex-col justify-center items-center">
-        <h2 className="text-lg font-semibold self-start ml-5 mt-3 text-gray-500">All Books</h2>
+        <h2 className="text-lg font-semibold self-start mt-3 text-gray-500 sticky top-[46px] pl-4 bg-white w-[1000px]">All Books</h2>
         <hr className='w-full' />
         <hr />
         <hr />
