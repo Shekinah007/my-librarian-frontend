@@ -13,7 +13,7 @@ const AddBook = ({ openAddFormBtn, handleAddForm }: any) => {
         e.preventDefault()
 
         // fetch("http://localhost:3000/library/book/addBook", {
-        fetch("https://mylibrarian.zeabur.app/library/book/bookaddBook", {
+        fetch("https://mylibrarian.zeabur.app/library/book/addBook", {
             method: "POST",
             body: JSON.stringify({
                 title: title,
