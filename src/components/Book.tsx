@@ -5,7 +5,7 @@
 // const Book: React.FunctionComponent<BookInfo> = ({ bookDetails }: any):  => {
 
 
-const Book = ({ bookDetails, bookList, hanldeBookList }: any) => {
+const Book = ({ bookDetails, hanldeBookList }: any) => {
 
 
 
