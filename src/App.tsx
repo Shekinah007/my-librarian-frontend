@@ -83,7 +83,7 @@ function App(): ReactElement {
           Add Book
         </button>
       </div>
-      <AddBook openAddFormBtn={addButton} handleAddForm={setAddButton} />
+      <AddBook openAddFormBtn={addButton} handleAddForm={setAddButton} handleBookList={setBookList} />
     </div>
   )
 }

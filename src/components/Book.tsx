@@ -29,6 +29,7 @@ const Book = ({ bookDetails, bookList, hanldeBookList }: any) => {
                         .then(res => {
                             if (res.ok) {
                                 console.log("Delete Successful")
+                                alert("Delete Successful")
                                 // fetch("http://localhost:3000/library/book/")
                                 fetch("https://mylibrarian.zeabur.app/library/book/")
                                     .then(res => res.json())

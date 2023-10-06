@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddBook = ({ openAddFormBtn, handleAddForm }: any) => {
+const AddBook = ({ openAddFormBtn, handleAddForm, handleBookList }: any) => {
 
 
     const [title, setTitle] = useState("")
@@ -28,6 +28,16 @@ const AddBook = ({ openAddFormBtn, handleAddForm }: any) => {
                 if (res.ok) {
                     // console.log("Success")
                     alert("Book added successfully")
+                    fetch("https://mylibrarian.zeabur.app/library/book")
+                        .then(response => {
+                            if (response.ok) {
+                                return response.json()
+                            }
+                        })
+                        .then(data => {
+                            handleBookList(data)
+                            handleAddForm(false)
+                        })
                     return res.json()
                 } else {
                     alert("An error has occurred. Check console for details.")
@@ -71,7 +81,7 @@ const AddBook = ({ openAddFormBtn, handleAddForm }: any) => {
                 </div>
                 <div className="flex gap-3">
                     <button className="rounded-md p-2 bg-green-500 w-[70px]" type="submit" >Add</button>
-                    <button className="rounded-md p-2 bg-red-500 w-[70px]" type="button" onClick={() => { handleAddForm(false) }}>Cancel</button>
+                    <button className="rounded-md p-2 bg-red-500 w-[70px]" type="button" onClick={() => { handleAddForm(false) }}>Close</button>
                 </div>
             </form>
         </div>
