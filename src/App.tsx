@@ -64,7 +64,7 @@ function App(): ReactElement {
     <div className="">
       <Navbar searchText={searchText} handleSearch={setSearchText} />
       <div className="shelve py-3 pt-20 flex flex-col justify-center items-center">
-        <h2 className="text-xl font-semibold">All Books</h2>
+        <h2 className="text-lg font-semibold">All Books</h2>
         <hr className='w-full' />
         <hr />
         <hr />

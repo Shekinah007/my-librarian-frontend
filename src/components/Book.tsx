@@ -12,7 +12,7 @@ const Book = ({ bookDetails }: any) => {
     return (
         <div className="book flex justify-between items-center mx-4 md:w-[700px] rounded-md p-2 bg-gray-400/20">
             <div>
-                <h3 className="font-semibold text-xl">{bookDetails.title}</h3>
+                <h3 className="font-semibold text-md">{bookDetails.title}</h3>
                 <p>{bookDetails.author}</p>
                 <p className="text-gray-500 font-bold text-sm">{bookDetails.releaseDate}</p>
                 <hr />

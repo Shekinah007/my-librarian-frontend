@@ -3,7 +3,7 @@ import { } from 'react'
 const Navbar = ({ handleSearch }: any) => {
     return (
         <div className="bg-blue-600 flex w-full justify-between items-center h-16 px-2 py-1 fixed">
-            <h1 className='text-2xl font-semibold text-white'>My Librarian</h1>
+            <h1 className='text-lg font-semibold text-white'>My Librarian</h1>
             <div className="flex gap-3">
                 {/* <button>List All Books</button> */}
                 <div>
