@@ -42,7 +42,7 @@ function App(): ReactElement {
 
   useEffect(() => {
     // fetch("http://localhost:3000/library/book/findBook", {
-    fetch("https://mylibrarian.zeabur.app/library/findBook", {
+    fetch("https://mylibrarian.zeabur.app/library/book/findBook", {
       method: "POST",
       body: JSON.stringify({ searchText: searchText }),
       headers: { 'Content-Type': 'application/json' }
