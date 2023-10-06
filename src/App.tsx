@@ -70,7 +70,7 @@ function App(): ReactElement {
         <hr />
         <div className='mt-3 flex flex-col justify-center md:items-center gap-3 w-screen'>
           {/* {bookList.length == 0 ? "Not Present" : "Present"} */}
-          {bookList.length == 0 ? "" : bookList.map(book => <Book bookDetails={book} key={Math.random() * 10} />)}
+          {bookList.length == 0 ? "" : bookList.map(book => <Book bookDetails={book} key={Math.random() * 10} bookList={bookList} hanldeBookList={setBookList} />)}
 
         </div>
         <button className="fixed bottom-10 right-10
