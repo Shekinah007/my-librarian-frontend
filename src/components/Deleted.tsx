@@ -10,13 +10,13 @@ const Deleted = ({ deleteModal, handleDeleteModal }: any) => {
             <div className={`
         rounded-lg h-[180px] w-[250px] bg-red-200 flex flex-col 
         items-center justify-center gap-6 duration-300 fixed top-1/2 
-        left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-100 
-        ${!deleteModal && "-scale-[0] opacity-100 "}`}>
+        left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+        ${!deleteModal && "scale-0 opacity-100 "}`}>
 
                 <p className="text-lg font-semibold">Deleted Successfully</p>
                 <button
                     className="bg-blue-500 text-white p-2 px-6 rounded-lg"
-                    onClick={() => handleDeleteModal(() => false)}
+                    onClick={() => handleDeleteModal(false)}
                 >
                     OK
                 </button>

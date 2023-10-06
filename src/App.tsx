@@ -10,7 +10,7 @@ function App(): ReactElement {
   const [searchText, setSearchText] = useState<String>("")
   const [bookList, setBookList] = useState([])
   const [addButton, setAddButton] = useState<Boolean>(false)
-  const [deleteModal, setDeleteModal] = useState(true)
+  const [deleteModal, setDeleteModal] = useState(false)
 
 
 
