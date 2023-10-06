@@ -27,7 +27,6 @@ const AddBook = ({ openAddFormBtn, handleAddForm, handleBookList }: any) => {
                 console.log(res)
                 if (res.ok) {
                     // console.log("Success")
-                    alert("Book added successfully")
                     fetch("https://mylibrarian.zeabur.app/library/book")
                         .then(response => {
                             if (response.ok) {
@@ -37,6 +36,8 @@ const AddBook = ({ openAddFormBtn, handleAddForm, handleBookList }: any) => {
                         .then(data => {
                             handleBookList(data)
                             handleAddForm(false)
+                            alert("Book added successfully")
+
                         })
                     return res.json()
                 } else {
