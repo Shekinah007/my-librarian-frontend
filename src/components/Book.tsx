@@ -10,11 +10,11 @@ const Book = ({ bookDetails, hanldeBookList, openDeleteModal }: any) => {
 
 
     return (
-        <div className="book flex justify-between items-center mx-4 md:w-[700px] rounded-md p-2 bg-gray-400/20">
+        <div className="book flex flex-col justify-between items-start h-[170px] rounded-md p-2 bg-gray-400/20">
             <div>
-                <h3 className="font-semibold text-md">{bookDetails.title}</h3>
-                <p>{bookDetails.author}</p>
-                <p className="text-gray-500 font-bold text-sm">{bookDetails.releaseDate}</p>
+                <h3 className="text-sm font-bold">{bookDetails.title}</h3>
+                <p className="text-sm font-semibold">{bookDetails.author}</p>
+                <p className="text-gray-500 font-semibold text-sm">{bookDetails.releaseDate}</p>
                 <hr />
             </div>
             <button className="bg-red-400 rounded-md p-1 text-white

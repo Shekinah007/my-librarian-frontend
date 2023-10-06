@@ -70,13 +70,13 @@ function App(): ReactElement {
             ${!deleteModal && '-scale-0 opacity-0'}`
       }></div> */}
       <Navbar searchText={searchText} handleSearch={setSearchText} />
-      <div className="shelve py-3 pt-12 flex flex-col justify-center items-center">
-        <h2 className="text-lg font-semibold self-start mt-3 text-gray-500 sticky top-[46px] pl-4 bg-white w-[1000px]">All Books</h2>
+      <div className="shelve py-3 pt-20 flex flex-col justify-center items-center">
+        {/* <h2 className="text-lg font-semibold self-start mt-3 text-gray-500 sticky top-[46px] pl-4 bg-white w-[1000px]">All Books</h2> */}
         <hr className='w-full' />
         <hr />
         <hr />
 
-        <div className='mt-3 flex flex-col justify-center md:items-center gap-3 w-screen'>
+        <div className='mt-3 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 justify-center md:items-center gap-2 px-4 w-screen'>
           {/* {bookList.length == 0 ? "Not Present" : "Present"} */}
           {bookList.length == 0 ? "" : bookList.map(book => <Book bookDetails={book} key={Math.random() * 10} openDeleteModal={setDeleteModal} bookList={bookList} hanldeBookList={setBookList} />)}
 
