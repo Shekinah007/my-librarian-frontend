@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Book from './components/Book'
 import AddBook from './components/AddBook'
 import Deleted from './components/Deleted'
+import { Puff } from 'react-loader-spinner'
 
 function App(): ReactElement {
 
@@ -65,6 +66,20 @@ function App(): ReactElement {
 
   return (
     <div className="">
+      <div className="fixed x-col 
+        items-center justify-center gap-6 duration-300 top-1/2 
+        left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/20 h-screen w-screen flex justify-content item-center text-white ">
+        <Puff
+          height="80"
+          width="80"
+          radius={1}
+          // color="#1999"
+          ariaLabel="puff-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div>
       {/* <div className={`
             h-screen w-screen bg-black opacity-30 duration-300 fixed top-0 scale-100
             ${!deleteModal && '-scale-0 opacity-0'}`
