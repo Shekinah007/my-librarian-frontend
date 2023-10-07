@@ -3,17 +3,16 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Book from './components/Book'
 import AddBook from './components/AddBook'
-import Deleted from './components/Deleted'
 import { Puff } from 'react-loader-spinner'
+import DeletedModal from './components/Deleted'
 
 function App(): ReactElement {
 
   const [searchText, setSearchText] = useState<String>("")
   const [bookList, setBookList] = useState([])
   const [addButton, setAddButton] = useState<Boolean>(false)
-  const [deleteModal, setDeleteModal] = useState(false)
-
-
+  const [deleteModal, setDeleteModal] = useState<Boolean>(false)
+  const [spinner, setSpinner] = useState<Boolean>(false);
 
 
   useEffect(() => {
@@ -66,14 +65,16 @@ function App(): ReactElement {
 
   return (
     <div className="">
-      <div className="fixed x-col 
-        items-center justify-center gap-6 duration-300 top-1/2 
-        left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/20 h-screen w-screen flex justify-content item-center text-white ">
+      <div className={`fixed z-10 ${!spinner && "hidden"} x-col 
+        items-center justify-center gap-6 
+        duration-300 top-1/2 left-1/2 transform -translate-x-1/2 
+        -translate-y-1/2 bg-black/20 h-screen 
+        w-screen flex justify-content item-center text-white `}>
         <Puff
           height="80"
           width="80"
           radius={1}
-          // color="#1999"
+          color="#1999"
           ariaLabel="puff-loading"
           wrapperStyle={{}}
           wrapperClass=""
@@ -93,7 +94,14 @@ function App(): ReactElement {
 
         <div className='mt-3 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 justify-center md:items-center gap-2 px-4 w-screen'>
           {/* {bookList.length == 0 ? "Not Present" : "Present"} */}
-          {bookList.length == 0 ? "" : bookList.map(book => <Book bookDetails={book} key={Math.random() * 10} openDeleteModal={setDeleteModal} bookList={bookList} hanldeBookList={setBookList} />)}
+          {bookList.length == 0 ? "" : bookList.map(book =>
+            <Book bookDetails={book} key={Math.random() * 10}
+              openDeleteModal={setDeleteModal}
+              bookList={bookList}
+              hanldeBookList={setBookList}
+              handleSpinner={setSpinner}
+
+            />)}
 
         </div>
         <button className="fixed bottom-10 right-10
@@ -106,8 +114,13 @@ function App(): ReactElement {
           Add Book
         </button>
       </div>
-      <AddBook openAddFormBtn={addButton} handleAddForm={setAddButton} handleBookList={setBookList} />
-      <Deleted deleteModal={deleteModal} handleDeleteModal={setDeleteModal} />
+      <AddBook
+        openAddFormBtn={addButton}
+        handleAddForm={setAddButton}
+        handleBookList={setBookList}
+        handleSpinner={setSpinner}
+      />
+      <DeletedModal deleteModal={deleteModal} handleDeleteModal={setDeleteModal} handleSpinner={setSpinner} />
     </div>
   )
 }

@@ -7,7 +7,7 @@
 import { Puff } from "react-loader-spinner"
 
 
-const Book = ({ bookDetails, hanldeBookList, openDeleteModal }: any) => {
+const Book = ({ bookDetails, hanldeBookList, openDeleteModal, handleSpinner }: any) => {
 
 
 
@@ -26,6 +26,7 @@ const Book = ({ bookDetails, hanldeBookList, openDeleteModal }: any) => {
 
                 <button className="flex flex-col justify-between h-[40px]"
                     onClick={() => {
+                        handleSpinner(true)
                         // fetch(`http://localhost:3000/library/book/deleteBook/${bookDetails._id}`,
                         fetch(`https://mylibrarian.zeabur.app/library/book/deleteBook/${bookDetails._id}`,
                             {
@@ -52,14 +53,12 @@ const Book = ({ bookDetails, hanldeBookList, openDeleteModal }: any) => {
                             })
                     }}
                 >
-
                     <span className="fa-stack fa-lg text-gray-300 text-[18px]">
                         <i className="fa fa-square fa-stack-2x"></i>
                         <i className="fa fa-trash-o fa-stack-1x text-red-400 fa-inverse "></i>
                     </span>
                 </button>
-
-                <hr className="justify-start w-[80px] w-screen bg-black" />
+                <hr className="justify-start w-[80px] bg-black" />
             </div>
             {/* </div> */}
 

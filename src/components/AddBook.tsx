@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddBook = ({ openAddFormBtn, handleAddForm, handleBookList }: any) => {
+const AddBook = ({ openAddFormBtn, handleAddForm, handleBookList, handleSpinner }: any) => {
 
 
     const [title, setTitle] = useState("")
@@ -11,7 +11,8 @@ const AddBook = ({ openAddFormBtn, handleAddForm, handleBookList }: any) => {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()
-
+        handleSpinner(true)
+        handleAddForm(false)
         // fetch("http://localhost:3000/library/book/addBook", {
         fetch("https://mylibrarian.zeabur.app/library/book/addBook", {
             method: "POST",
@@ -24,6 +25,7 @@ const AddBook = ({ openAddFormBtn, handleAddForm, handleBookList }: any) => {
             headers: { 'Content-Type': 'application/json' }
         })
             .then(res => {
+                handleSpinner(false)
                 console.log(res)
                 if (res.ok) {
                     // console.log("Success")
