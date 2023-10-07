@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import Book from './components/Book'
 import AddBook from './components/AddBook'
 import { Puff } from 'react-loader-spinner'
-import DeletedModal from './components/Modals'
+import DeletedModal, { AddedModal } from './components/Modals'
 
 function App(): ReactElement {
 
@@ -122,6 +122,7 @@ function App(): ReactElement {
         handleBookList={setBookList}
         handleSpinner={setSpinner}
       />
+      <AddedModal handleSpinner={setSpinner} />
       <DeletedModal deleteModal={deleteModal} handleDeleteModal={setDeleteModal} handleSpinner={setSpinner} />
     </div>
   )

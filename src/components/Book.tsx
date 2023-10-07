@@ -4,9 +4,6 @@
 // }
 // const Book: React.FunctionComponent<BookInfo> = ({ bookDetails }: any):  => {
 
-import { Puff } from "react-loader-spinner"
-
-
 const Book = ({ bookDetails, hanldeBookList, openDeleteModal, handleSpinner }: any) => {
 
 
