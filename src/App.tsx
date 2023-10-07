@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import Book from './components/Book'
 import AddBook from './components/AddBook'
 import { Puff } from 'react-loader-spinner'
-import DeletedModal from './components/Deleted'
+import DeletedModal from './components/Modals'
 
 function App(): ReactElement {
 
@@ -45,11 +45,13 @@ function App(): ReactElement {
 
   useEffect(() => {
     // fetch("http://localhost:3000/library/book/findBook", {
+    setSpinner(true)
     fetch("https://mylibrarian.zeabur.app/library/book/findBook", {
       method: "POST",
       body: JSON.stringify({ searchText: searchText }),
       headers: { 'Content-Type': 'application/json' }
     }).then(res => {
+      setSpinner(false)
       if (res.ok) {
         return res.json()
       } else {
