@@ -4,7 +4,11 @@ import Navbar from './components/Navbar'
 import Book from './components/Book'
 import AddBook from './components/AddBook'
 import { Puff } from 'react-loader-spinner'
+<<<<<<< HEAD
 import DeletedModal, { AddedModal } from './components/Modals'
+=======
+import DeletedModal from './components/Modals'
+>>>>>>> 13d1f80ef6300e493f692472eb3756ee84b3b3ea
 
 function App(): ReactElement {
 
